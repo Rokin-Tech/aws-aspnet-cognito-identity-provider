@@ -24,20 +24,8 @@ namespace Amazon.AspNetCore.Identity.Cognito
     /// </summary>
     public class CognitoKeyNormalizer : ILookupNormalizer
     {
-#if NETSTANDARD2_0
-        /// <summary>
-        /// Normalizes the key to be be used by Cognito.
-        /// </summary>
-        /// <param name="key">The key to normalize</param>
-        /// <returns></returns>
-        public string Normalize(string key)
-        {
-            // Cognito does not handle normalization, returning the key as is.
-            return key;
-        }
-#endif
 
-#if NETCOREAPP3_1
+
         /// <summary>
         /// Returns a normalized representation of the specified <paramref name="name"/>.
         /// </summary>
@@ -59,6 +47,6 @@ namespace Amazon.AspNetCore.Identity.Cognito
             // Cognito does not handle normalization, returning the email as is.
             return email;
         }
-#endif
+
     }
 }
